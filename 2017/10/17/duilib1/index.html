@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Duilib," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="icelinks的代码房间">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Code Room">
-<meta property="og:url" content="https://icelinks.github.io/blog/index.html">
+<meta name="description" content="之前修改了一个项目的windows界面工具代码，该工具是用MFC做的，功能也相对简单。但是考虑到纯用MFC学习成本较大，同时已经不太流行，并且该工具实现的效果实在过于简陋，因此在寻找一个好用的UI库。这时，directui界面和逻辑分离的设计极大的吸引了我，因此开始尝试使用一个比较流行的c++上的directui库：Duilib。然而有一个问题就是我下的这个版本貌似没有WindowImplBase">
+<meta name="keywords" content="Duilib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WindowImplBase的简单实现">
+<meta property="og:url" content="https://icelinks.github.io/blog/2017/10/17/duilib1/index.html">
 <meta property="og:site_name" content="Code Room">
-<meta property="og:description" content="icelinks的代码房间">
+<meta property="og:description" content="之前修改了一个项目的windows界面工具代码，该工具是用MFC做的，功能也相对简单。但是考虑到纯用MFC学习成本较大，同时已经不太流行，并且该工具实现的效果实在过于简陋，因此在寻找一个好用的UI库。这时，directui界面和逻辑分离的设计极大的吸引了我，因此开始尝试使用一个比较流行的c++上的directui库：Duilib。然而有一个问题就是我下的这个版本貌似没有WindowImplBase">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-17T06:34:13.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code Room">
-<meta name="twitter:description" content="icelinks的代码房间">
+<meta name="twitter:title" content="WindowImplBase的简单实现">
+<meta name="twitter:description" content="之前修改了一个项目的windows界面工具代码，该工具是用MFC做的，功能也相对简单。但是考虑到纯用MFC学习成本较大，同时已经不太流行，并且该工具实现的效果实在过于简陋，因此在寻找一个好用的UI库。这时，directui界面和逻辑分离的设计极大的吸引了我，因此开始尝试使用一个比较流行的c++上的directui库：Duilib。然而有一个问题就是我下的这个版本貌似没有WindowImplBase">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://icelinks.github.io/blog/"/>
+  <link rel="canonical" href="https://icelinks.github.io/blog/2017/10/17/duilib1/"/>
 
 
 
 
 
-  <title>Code Room</title>
+  <title>WindowImplBase的简单实现 | Code Room</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -279,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/10/17/duilib1/" itemprop="url">WindowImplBase的简单实现</a></h1>
+          <h1 class="post-title" itemprop="name headline">WindowImplBase的简单实现</h1>
         
 
         <div class="post-meta">
@@ -353,14 +352,10 @@
       
 
       
-        
-          
-            <p>之前修改了一个项目的windows界面工具代码，该工具是用MFC做的，功能也相对简单。<br>但是考虑到纯用MFC学习成本较大，同时已经不太流行，并且该工具实现的效果实在过于简陋，因此在寻找一个好用的UI库。这时，directui界面和逻辑分离的设计极大的吸引了我，因此开始尝试使用一个比较流行的c++上的directui库：Duilib。<br>然而有一个问题就是我下的这个版本貌似没有WindowImplBase这个类，本人比较懒不愿再去找，因此简单的封装实现了一下这个类，暂时居然还可以用。以下是代码：</p>
+        <p>之前修改了一个项目的windows界面工具代码，该工具是用MFC做的，功能也相对简单。<br>但是考虑到纯用MFC学习成本较大，同时已经不太流行，并且该工具实现的效果实在过于简陋，因此在寻找一个好用的UI库。这时，directui界面和逻辑分离的设计极大的吸引了我，因此开始尝试使用一个比较流行的c++上的directui库：Duilib。<br>然而有一个问题就是我下的这个版本貌似没有WindowImplBase这个类，本人比较懒不愿再去找，因此简单的封装实现了一下这个类，暂时居然还可以用。以下是代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">typedef std::basic_string&lt;TCHAR&gt; tString;</div><div class="line"></div><div class="line">using namespace DuiLib;</div><div class="line"></div><div class="line">class WindowImplBase:public CWindowWnd,public INotifyUI&#123;</div><div class="line">public:</div><div class="line">    WindowImplBase()&#123;</div><div class="line">        CPaintManagerUI::SetResourcePath(GetSkinFolder().c_str());</div><div class="line">    &#125;</div><div class="line">    virtual tString GetSkinFile() &#123;return __T(&quot;&quot;);&#125;</div><div class="line">    virtual tString GetSkinFolder()&#123;return __T(&quot;&quot;);&#125;</div><div class="line"></div><div class="line">    virtual LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)</div><div class="line">    &#123;</div><div class="line">        LRESULT lRes = 0;</div><div class="line"></div><div class="line">        CDialogBuilder builder;</div><div class="line">        switch(uMsg)</div><div class="line">        &#123;</div><div class="line">            case WM_CREATE:</div><div class="line">            &#123;</div><div class="line">                m_PaintManager.Init(m_hWnd);</div><div class="line">                </div><div class="line">                CControlUI* pRoot = builder.Create(GetSkinFile().c_str(), (UINT)0, NULL, &amp;m_PaintManager);  </div><div class="line">                ASSERT(pRoot &amp;&amp; &quot;Failed to parse XML&quot;);</div><div class="line">                </div><div class="line">                m_PaintManager.AttachDialog(pRoot);</div><div class="line">                m_PaintManager.AddNotifier(this);</div><div class="line">                return lRes;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            //屏蔽系统标题栏</div><div class="line">            case WM_NCACTIVATE: </div><div class="line">                if( !::IsIconic(m_hWnd) ) </div><div class="line">                &#123;</div><div class="line">                    return (wParam == 0) ? TRUE : FALSE;</div><div class="line">                &#125;</div><div class="line">            case WM_NCCALCSIZE:</div><div class="line">                return 0;</div><div class="line">            case WM_NCPAINT: </div><div class="line">                return 0;</div><div class="line">            </div><div class="line">            //关闭窗口</div><div class="line">            case WM_CLOSE:</div><div class="line">                ::CloseWindow(m_hWnd);</div><div class="line">                return 0;</div><div class="line">            case WM_DESTROY:</div><div class="line">                ::DestroyWindow(m_hWnd);</div><div class="line">                PostQuitMessage(0);</div><div class="line">                return 0;</div><div class="line">            </div><div class="line">            default: </div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        if( m_PaintManager.MessageHandler(uMsg, wParam, lParam, lRes) ) </div><div class="line">        &#123;</div><div class="line">            return lRes;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return __super::HandleMessage(uMsg, wParam, lParam);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">protected:</div><div class="line">    CPaintManagerUI m_PaintManager;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>使用时只需要继承该类，并在子类中实现虚函数GetWindowClassName(),GetSkinFile(),GetSkinFolder()就可以了。<br>其中GetWindowClassName()返回控件的唯一标识，GetSkinFile()返回xml文件的名字，GetSkinFolder()返回xml文件所在的路径。<br>&nbsp;&nbsp;以上就是所有内容，本人还在学习中，分享一点学习过程，也希望能和大家多多交流。</p>
 
-          
-        
       
     </div>
     
@@ -375,170 +370,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://icelinks.github.io/blog/blog/2017/10/11/cerror/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="icelinks">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Code Room">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/10/11/cerror/" itemprop="url">C语言常见错误</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T15:27:37+08:00">
-                2017-10-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/C语言相关/" itemprop="url" rel="index">
-                    <span itemprop="name">C语言相关</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/blog/tags/Duilib/" rel="tag"># Duilib</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="scanf"><a href="#scanf" class="headerlink" title="scanf()"></a>scanf()</h2><p>传递的应该是变量的<strong>地址</strong>而非变量本身，错误使用会造成引用坏指针的错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) scanf(&quot;%d&quot;,&amp;val); (√)</div><div class="line">2) scanf(&quot;%d&quot;,val);  (x)</div></pre></td></tr></table></figure></p>
-<h2 id="不安全的函数"><a href="#不安全的函数" class="headerlink" title="不安全的函数"></a>不安全的函数</h2><p>使用不安全的函数时应当注意避免<strong>栈溢出</strong>，尽量使用它的安全版本;<br>常见不安全的有strcpy,sprintf等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) fgets(buf,bufsize,fp); (√)</div><div class="line">2) gets(buf);  (x)</div></pre></td></tr></table></figure></p>
-<h2 id="指针大小"><a href="#指针大小" class="headerlink" title="指针大小"></a>指针大小</h2><p>指针与它所指向的数据不一定具有相同大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) int **A = (int **)malloc(n*sizeof(int*)); (√)</div><div class="line">2) int **A = (int **)malloc(n*sizeof(int));  (x)</div></pre></td></tr></table></figure></p>
-<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p>“==”结果为一个布尔值，而“=”表示的则是一个赋值操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) if(i==3); (√)</div><div class="line">2) if(i=3);  (x)</div></pre></td></tr></table></figure></p>
-<h2 id="数组超限"><a href="#数组超限" class="headerlink" title="数组超限"></a>数组超限</h2><p>数组A[n]只分配n个空间，却初始化了n+1个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) for(i=0;i&lt;n;i++)A[i]=(int*)malloc(m*sizeof(int)); (√)</div><div class="line">2) for(i=0;i&lt;=n;i++)A[i]=(int*)malloc(m*sizeof(int));  (x)</div></pre></td></tr></table></figure></p>
-<h2 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h2><p>“–”和“*”操作符的优先级相同，减少的是指针的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*size--;</div></pre></td></tr></table></figure></p>
-<p>想要减少指针指向对象的值应当使用括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(*size)--;</div></pre></td></tr></table></figure></p>
-<h2 id="函数返回"><a href="#函数返回" class="headerlink" title="函数返回"></a>函数返回</h2><p>此处可以返回，但返回的不是指向val的地址，val为局部变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int *s()&#123;</div><div class="line">    int val;</div><div class="line">    return &amp;val;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="malloc"><a href="#malloc" class="headerlink" title="malloc()"></a>malloc()</h2><p>未回收用malloc分配的空间，会导致存储器泄漏(内存泄露)<br>malloc分配的空间释放后，继续引用了该内容，将导致不可知的错误(野指针)</p>
-<h2 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h2><p>C中数组是按照行优先的顺序存放的，使用时应当考虑空间局部性<br>局部性简单原则：</p>
-<pre><code>* 重复引用同一个变量的程序有良好的时间局部性；
-* 步长越小，空间局部性越好；
-* 循环体越小，循环迭代次数越多，局部性越好。
-</code></pre><h2 id="数组名和指针的区别"><a href="#数组名和指针的区别" class="headerlink" title="数组名和指针的区别"></a>数组名和指针的区别</h2><p>C语言中数组名和指针的区别是，指针是一个变量而数组名不是，尽管有时它们使用起来有相似的地方<br>假设存在a[6]和*pa:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1) pa = a;pa++; (√)</div><div class="line">2) a = pa;a++; (x)</div></pre></td></tr></table></figure></p>
-<h2 id="sizeof和strlen"><a href="#sizeof和strlen" class="headerlink" title="sizeof和strlen"></a>sizeof和strlen</h2><p>sizeof为运算符，它的值在编译时已经计算好了，而strlen则在运行时才计算；<br>sizeof计算的大小包括结束符\0而strlen不包括。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2017/10/11/cerror/" rel="next" title="C语言常见错误">
+                <i class="fa fa-chevron-left"></i> C语言常见错误
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -548,10 +409,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -559,6 +421,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -763,6 +629,10 @@
   
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
